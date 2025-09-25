@@ -62,12 +62,11 @@ It retrieves data from the Strikingly Zendesk API, creates embeddings with FAISS
 
 ```
 strikingly_test_chatbot/
-│── content-chatbot/
-│   ├── create_embedding.py      # Fetch articles & build FAISS vectorstore
-│   ├── ask_question.py          # Task 1: VectorDBQAWithSourcesChain
-│   ├── answer_question.py       # Task 2: ConversationalRetrievalChain
-│   └── requirements.txt
-│── README.md
+├── create_embedding.py      # Fetch articles & build FAISS vectorstore
+├── ask_question.py          # Task 1: VectorDBQAWithSourcesChain
+├── answer_question.py       # Task 2: ConversationalRetrievalChain
+├── requirements.txt
+└── README.md
 ```
 
 ---
