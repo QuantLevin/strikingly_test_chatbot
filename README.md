@@ -37,13 +37,6 @@ It retrieves data from the Strikingly Zendesk API, creates embeddings with FAISS
 
    Then in the notebook:
 
-```python
-from google.colab import userdata
-import os
-
-key = userdata.get('OPENAI_API_KEY')
-os.environ["OPENAI_API_KEY"] = key
-```
 
 4. **Run Task 1 (build embeddings from Strikingly support center)**:
 
