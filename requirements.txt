@@ -1,0 +1,23 @@
+# 基础配置
+python-dotenv==1.1.1
+beautifulsoup4==4.13.5
+xmltodict==0.13.0
+
+# Vector DB
+faiss-cpu
+
+# 数据处理
+dataclasses-json==0.6.7
+packaging==25.0
+pydantic==2.11.9
+
+# LangChain
+langchain==0.3.27
+langchain-community==0.3.29
+langchain-core==0.3.76
+langchain-text-splitters==0.3.11
+langsmith==0.4.30
+langchain_openai==0.3.33
+
+# OpenAI
+openai>=1.109.1
