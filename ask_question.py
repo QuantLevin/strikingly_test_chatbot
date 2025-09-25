@@ -7,7 +7,8 @@ from langchain.chains import VectorDBQAWithSourcesChain
 from langchain_community.vectorstores import FAISS
 from langchain_openai import OpenAIEmbeddings
 from dotenv import load_dotenv
-
+import warnings
+warnings.filterwarnings("ignore", category=UserWarning)
 
 load_dotenv()
 key = os.environ.get("OPENAI_API_KEY")
@@ -21,7 +22,7 @@ store = FAISS.load_local("faiss_store", embeddings,allow_dangerous_deserializati
 
 chain = VectorDBQAWithSourcesChain.from_llm(
         llm=OpenAI(temperature=0, verbose=True), vectorstore=store, verbose=True)
-result = chain({"question": args.question})
+result = chain.invoke({"question": args.question})
 
 print(f"Answer: {result['answer']}")
 print(f"Sources: {result['sources']}")

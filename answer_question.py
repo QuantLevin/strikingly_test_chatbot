@@ -7,7 +7,8 @@ from langchain_openai import OpenAI
 from langchain.chains import VectorDBQAWithSourcesChain,ConversationalRetrievalChain
 from dotenv import load_dotenv
 from langchain_openai import OpenAIEmbeddings
-# from langchain_community.embeddings import OpenAIEmbeddings
+import warnings
+warnings.filterwarnings("ignore", category=UserWarning)
 
 load_dotenv()
 openai_api_key = os.getenv("OPENAI_API_KEY")
@@ -27,7 +28,7 @@ chain_conversational = ConversationalRetrievalChain.from_llm(
     verbose=True
 )
 chat_history = []
-result = chain_conversational({"question": args.question, "chat_history": chat_history})
+result = chain_conversational.invoke({"question": args.question, "chat_history": chat_history})
 
 
 print(f"Answer: {result['answer']}")

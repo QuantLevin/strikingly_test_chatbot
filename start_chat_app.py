@@ -6,7 +6,8 @@ from langchain.chains import ConversationalRetrievalChain
 from langchain_openai import OpenAIEmbeddings
 import os
 from dotenv import load_dotenv
-
+import warnings
+warnings.filterwarnings("ignore", category=UserWarning)
 
 _template = """
 You are given a conversation history and a follow-up question. 
@@ -70,7 +71,7 @@ if __name__ == "__main__":
     print("Chat with the Strikingly.com bot:")
     print("Your question:")
     question = input()
-    result = qa_chain({"question": question, "chat_history": []})
+    result = qa_chain.invoke({"question": question, "chat_history": []})
     print(f"AI: {result['answer']}")
     print("Sources:")
     for doc in result['source_documents']:
